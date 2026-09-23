@@ -1,43 +1,143 @@
+cat > index.html 
 <!DOCTYPE html>
 <html lang="en">
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Abubakar Website</title>
+<title>Abubakar Dahiru | Cybersecurity Portfolio</title>
+
 <style>
+*{box-sizing:border-box;margin:0;padding:0}
 html{scroll-behavior:smooth}
-@keyframes fadeIn{from{opacity:0;transform:translateY(20px)}to{opacity:1;transform:translateY(0)}}
-@keyframes typing{from{width:0}to{width:100%}} @keyframes blink{50%{border-color:transparent}}
-.hero,.box,.profile{animation:fadeIn 1s ease-out}
-body{font-family:Arial,sans-serif;margin:0;background:linear-gradient(135deg,#111,#444);text-align:center;color:#222}
-nav{background:#000;padding:18px 5px;position:sticky;top:0;z-index:10}
-nav a{color:white;text-decoration:none;margin:8px;font-weight:bold}
+body{
+  font-family:Arial,sans-serif;
+  background:#050b10;
+  color:#fff;
+  line-height:1.6
+}
+nav{
+  position:sticky;
+  top:0;
+  z-index:1000;
+  background:rgba(5,11,16,.95);
+  padding:18px;
+  text-align:center;
+  border-bottom:1px solid #00ff99
+}
+nav a{
+  color:#fff;
+  text-decoration:none;
+  margin:0 12px;
+  font-weight:bold
+}
 nav a:hover{color:#00ff99}
-nav a{display:inline-block;transition:.3s}
-.profile{background:white;margin:25px 15px;padding:30px;border-radius:18px}
-.avatar{width:90px;height:90px;line-height:90px;margin:auto;border-radius:50%;background:#00aa66;color:white;font-size:40px;font-weight:bold}
-animation:pulse 2s infinite
-header{min-height:350px;display:flex;align-items:center;justify-content:center;color:white;padding:20px}
-.hero h1{font-size:40px;margin:10px 0}
-.hero h2{font-size:20px;font-weight:normal}
-.hero p{color:#00ff99;font-weight:bold;letter-spacing:3px}
-.typing{overflow:hidden;white-space:nowrap;border-right:3px solid #00ff99;width:0;animation:typing 3s steps(25,end) forwards,blink .7s infinite}
-.box{background:white;margin:25px 15px;padding:30px;border-radius:18px;box-shadow:0 8px 25px rgba(0,0,0,.15)}
-.project{background:#f7f7f7;margin:15px 0;padding:20px;border-radius:14px}
-.status{display:inline-block;background:#00aa66;color:white;padding:6px 12px;border-radius:20px;font-size:13px;font-weight:bold;margin-top:8px}
-.social{margin:20px 0}.social a{display:inline-block;background:#111;color:white;text-decoration:none;padding:12px 20px;margin:5px;border-radius:8px;transition:.3s}.social a:hover{background:#00aa66;transform:translateY(-3px)}
-.skill-card{display:inline-block;background:#111;color:white;padding:18px;margin:10px;border-radius:14px;transition:.3s}.skill-card:hover{transform:translateY(-8px);box-shadow:0 8px 20px rgba(0,255,153,.3)}
-button{padding:13px 25px;border:0;border-radius:8px;background:#111;color:white;font-size:16px;cursor:pointer}
-button:hover{background:#00aa66}
-button:active{transform:scale(.95)}
-button{box-shadow:0 0 15px #00ff99}
-input,textarea{width:100%;box-sizing:border-box;padding:14px;margin:8px 0;border:1px solid #ddd;border-radius:10px;font-size:16px}
-form{max-width:500px;margin:20px auto}
-footer{color:white;padding:25px}
+
+.hero{
+  min-height:85vh;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  text-align:center;
+  padding:40px 20px;
+  background:linear-gradient(135deg,#06141c,#001b16)
+}
+.hero h1{
+  font-size:48px;
+  margin-bottom:10px
+}
+.hero h1 span{color:#00ff99}
+.hero h2{
+  color:#bbb;
+  font-weight:normal;
+  margin-bottom:20px
+}
+.hero p{
+  max-width:650px;
+  margin:auto;
+  color:#ccc
+}
+.btn{
+  display:inline-block;
+  margin-top:25px;
+  padding:13px 25px;
+  background:#00ff99;
+  color:#00120c;
+  text-decoration:none;
+  border-radius:8px;
+  font-weight:bold
+}
+.btn:hover{background:#00cc7a}
+
+section{
+  max-width:1000px;
+  margin:auto;
+  padding:75px 20px
+}
+.title{
+  text-align:center;
+  color:#00ff99;
+  font-size:32px;
+  margin-bottom:35px
+}
+.card{
+  background:#0c151b;
+  border:1px solid #18332c;
+  border-radius:15px;
+  padding:30px;
+  margin-bottom:20px;
+  box-shadow:0 10px 30px rgba(0,0,0,.25)
+}
+.card p{color:#ccc}
+
+.skills{
+  display:grid;
+  grid-template-columns:repeat(auto-fit,minmax(180px,1fr));
+  gap:15px
+}
+.skill{
+  background:#101c22;
+  padding:20px;
+  text-align:center;
+  border-radius:10px;
+  border:1px solid #1c493b
+}
+.skill strong{color:#00ff99}
+
+.projects{
+  display:grid;
+  grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
+  gap:20px
+}
+.project h3{
+  color:#00ff99;
+  margin-bottom:10px
+}
+
+.contact{text-align:center}
+.contact a{
+  color:#00ff99;
+  text-decoration:none
+}
+
+footer{
+  text-align:center;
+  padding:30px;
+  background:#020609;
+  color:#888;
+  border-top:1px solid #18332c
+}
+
+@media(max-width:600px){
+  .hero h1{font-size:36px}
+  nav a{
+    margin:5px;
+    font-size:14px
+  }
+}
 </style>
 </head>
+
 <body>
-<script>window.addEventListener("load",function(){alert("Welcome to Abubakar Dahiru Website! 🚀")})</script>
 
 <nav>
 <a href="#home">Home</a>
@@ -47,79 +147,75 @@ footer{color:white;padding:25px}
 <a href="#contact">Contact</a>
 </nav>
 
-<div class="profile">
-<div class="avatar">A</div>
-<h2>Abubakar Dahiru</h2>
-<p>Cyber Security Student • Web Developer</p>
-</div>
-
-<header id="home">
-<div class="hero">
-<p>HI, I AM</p>
-<h1>Abubakar Dahiru</h1>
-<h2>Cyber Security Student & Web Developer</h2>
-<a href="#about"><button>Explore My Website</button></a>
-<a href="#contact"><button>Contact Me</button></a>
-<a href="cv.html"><button>📄 View My CV</button></a>
+<header class="hero" id="home">
+<div>
+<h1>Hi, I'm <span>Abubakar Dahiru</span></h1>
+<h2>Cybersecurity Student & Technology Enthusiast</h2>
+<p>
+Welcome to my personal portfolio. I'm learning cybersecurity,
+web technology and digital security while building practical skills
+for the future.
+</p>
+<a class="btn" href="#about">Explore My Portfolio</a>
 </div>
 </header>
 
-<div class="box" id="about">
-<h2>About Me</h2>
-<p>My name is Abubakar Dahiru. I am a Cyber Security student and Web Developer, passionate about technology, cybersecurity, and building useful websites.</p>
+<section id="about">
+<h2 class="title">About Me</h2>
+<div class="card">
+<p>
+I am Abubakar Dahiru, a cybersecurity student passionate about
+technology, computer security and learning new digital skills.
+This website is my personal portfolio where I share my journey,
+skills and projects.
+</p>
+</div>
+</section>
+
+<section id="skills">
+<h2 class="title">My Skills</h2>
+
+<div class="skills">
+<div class="skill"><strong>Cybersecurity</strong><br>Learning & Practice</div>
+<div class="skill"><strong>HTML</strong><br>Web Development</div>
+<div class="skill"><strong>CSS</strong><br>Web Design</div>
+<div class="skill"><strong>Termux</strong><br>Linux Environment</div>
+<div class="skill"><strong>Git & GitHub</strong><br>Version Control</div>
+<div class="skill"><strong>Networking</strong><br>Security Fundamentals</div>
+</div>
+</section>
+
+<section id="projects">
+<h2 class="title">Projects</h2>
+
+<div class="projects">
+
+<div class="card project">
+<h3>Personal Portfolio</h3>
+<p>
+A responsive personal website built with HTML and CSS
+and published using GitHub Pages.
+</p>
 </div>
 
-<div class="box" id="skills">
-<h2>My Skills</h2>
-<p>🔐 Cyber Security</p>
-<p>💻 Web Development</p>
-<p>📱 Termux</p>
+<div class="card project">
+<h3>Cybersecurity Learning</h3>
+<p>
+A collection of practical learning activities focused on
+cybersecurity, networking and digital security.
+</p>
 </div>
 
-<div class="box"><h2>My Goals</h2><p>🎯 Become a skilled Cyber Security professional</p><p>💻 Build useful and secure websites</p><p>🚀 Keep learning new technology</p></div>
-<div class="box" id="projects">
-<h2>My Projects</h2>
-<p>📊 Total Projects: <strong>3</strong></p>
-<div class="project"><h3>🔐 Cyber Security</h3><p>Learning cybersecurity, information security, and safe security practices.</p></div>
-<small>✅ Completed</small>
-<div class="project"><h3>💻 Personal Website</h3><p>Building and improving responsive websites with HTML, CSS, and JavaScript.</p></div>
-<small>✅ Completed</small>
-<div class="project"><h3>📱 Termux</h3><p>Learning Linux commands and practicing web development using Termux.</p></div>
-<small>✅ Completed</small>
+<div class="card project">
+<h3>Future Projects</h3>
+<p>
+More cybersecurity and technology projects will be added
+as I continue learning and developing my skills.
+</p>
 </div>
 
-<div class="box" id="contact">
-<h2>Contact Me</h2>
-<p>Send me a message.</p>
-<div class="social"><a href="#" >WhatsApp</a> <a href="#">GitHub</a></div>
-<form onsubmit="this.action='mailto:abubakardahirugml6972@gmail.com';this.method='post';return true">
-<input id="name" type="text" placeholder="Your Name" required>
-<input id="email" type="email" placeholder="Your Email" pattern="[A-Za-z0-9._%+-]+@[A-Za-z0-9.-]+.[A-Za-z]{2,}" title="Enter a valid email address" required>
-<textarea id="message" rows="5" placeholder="Your Message" required></textarea>
-<button type="submit">Send Message</button>
-</form>
 </div>
+</section>
 
-<a href="#home"><button>↑ Back to Top</button></a>
-<footer>
-<p>© 2026 Abubakar Dahiru | Cyber Security Student <p>© 2026 Abubakar Dahiru</p> Web Developer</p>
-</footer>
-
-<button onclick="document.body.classList.toggle('light')">🌙 Light Mode</button><style>.light{background:#f2f2f2;color:#111}.light .box,.light .profile{background:white}.light nav{background:#fff}.light nav a{color:#111}</style>
-<div id="clock" style="color:white;font-size:18px;margin:15px"></div><script>function updateClock(){document.getElementById("clock").textContent=new Date().toLocaleString()}setInterval(updateClock,1000);updateClock();</script>
-</body>
-</html>
-EOF 
-
-
-<style>
-@media (max-width:600px){
-nav a{margin:4px;font-size:13px}
-.hero h1{font-size:32px}
-.hero h2{font-size:17px}
-.box,.profile{margin:15px 10px;padding:22px 15px}
-.status{display:inline-block;background:#00aa66;color:white;padding:6px 12px;border-radius:20px;font-size:13px;font-weight:bold;margin-top:8px}
-.social{margin:20px 0}.social a{display:inline-block;background:#111;color:white;text-decoration:none;padding:12px 20px;margin:5px;border-radius:8px;transition:.3s}.social a:hover{background:#00aa66;transform:translateY(-3px)}
-.skill-card{display:block;margin:10px 0}
-}
-</style>
+<section id="contact">
+<h2 class="title"> 
